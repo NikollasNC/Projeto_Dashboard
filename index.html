@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/mercado_acoes.css">
+    <link rel="stylesheet" href="css/satisfacao_cliente.css">
+    <link rel="stylesheet" href="css/performance_financeira.css">
+</head>
+
+<body>
+    <header>
+        <div class="empresaSelect">
+            <select name="empresas" id="impSelect">
+                <option value="">IBM</option>
+                <option value="">Amazon</option>
+            </select>
+        </div>
+
+        <div id="div_buttons">
+            <button id="button_mercado_acoes" class="button_header button_selected">Mercado de Ações</button>
+            <button id="button_satisfacao_cliente" class="button_header">Satisfação & Cliente</button>
+            <button id="button_performance_financeira" class="button_header">Performance Financeira</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="mercado_de_acoes">
+            <div class="secao1">
+                <div id="acao">
+                    <p>Preço da Ação Atual</p>
+                    <hr>
+                    <div>
+                        <h1 id="valor_acao"></h1>
+                        <h2 id="valor_abertura">Abertura: </h2>
+                        <h2 id="valor_alta">Alta: </h2>
+                        <h2 id="valor_baixa">Baixa: </h2>
+                    </div>
+                </div>
+                <div id="curve_acoes" style="width: 300%; height: 100%"></div>
+            </div>
+
+            <section class="secao2">
+                <div id="volume_negociacao">
+                    <h1 id="quantidade_negociacao">Volume de Negociação: </h1>
+                    <div id="chart_div" style="width: 100%; height: 100%;"></div>
+                </div>
+
+                <div id="variacao_diaria">
+                    <p>Variação Diária (%)</p>
+                    <h1 id="variacao"></h1>
+                </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="satisfacao_e_cliente">
+            <section class="satisfacao_secao1">
+                <section id="net_promoter_score">
+                    <div>
+                        <h1>Net Promoter Score (NPS)</h1>
+                        <p>(satisfação do cliente)</p>
+                    </div>
+                    <div id="medidor_satisfacao" style="width: 220px; height: 220;"></div>
+                </section>
+
+                <section id="taxa_de_retencao">
+                    <div>
+                        <h1>Taxa de Retenção</h1>
+                        <p>(Clientes)</p>
+                    </div>
+                    <div id="grafico_retencao" style="width: 80%; height: 70%"></div>
+                </section>
+            </section>
+
+            <section class="taxa_clientes">
+                <h1>Taxa de Clientes Por País</h1>
+                <div id="regions_div" style="width: 100%; height: 50%;"></div>
+            </section>
+        </section>
+
+        <section id="performance_financeira">
+            <section class="performance_secao1">
+                <section class="receita secaoPerformance">
+                    <h1>Receita Anual</h1>
+                    <div id="grafico_receita" style="width: 100%; height: 100%"></div>
+                </section>
+
+                <section class="lucroLiquido secaoPerformance">
+                    <h1>Lucro Líquido Anual</h1>
+                    <div id="grafico_lucroLiquido" style="width: 100%; height: 100%"></div>
+                </section>
+            </section>
+
+            <section class="performance_secao2">
+                <section class="despesasOperacionais secaoPerformance">
+                    <h1>Despesas Operacionais Anual</h1>
+                    <div id="grafico_despesasOperacionais" style="width: 100%; height: 100%"></div>
+                </section>
+
+                <section class="investimento_ped secaoPerformance">
+                    <h1>Investimento em P&D (%)</h1>
+                </section>
+            </section>
+        </section>
+
+        
+    </main>
+
+    <div class="testee">
+            <h1>"oi"</h1>
+        </div>
+</body>
+
+<script src="js/index.js"></script>
+<script src="js/mercado_de_acoes.js"></script>
+<!-- <script src="js/satisfacao_cliente.js"></script> -->
+<!-- <script src="js/performance_financeira.js"></script> -->
+
+</html>

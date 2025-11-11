@@ -1,0 +1,41 @@
+#performance_financeira {
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+    gap: 1em;
+    height: 90%;
+
+    position: fixed;
+    z-index: -1;
+}
+
+.performance_secao1 {
+    display: flex;
+    gap: 2em;
+}
+
+.secaoPerformance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    gap: 1em;
+    border-radius: 10cap;
+    width: 100%;
+
+    border: 2px solid rgba(162, 162, 162, 0.353);
+    background-color: rgba(129, 118, 118, 0.544);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.597);
+}
+
+.secaoPerformance h1{
+    font-size: 1.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+}
+
+.performance_secao2 {
+    display: flex;
+    gap: 2em;
+}
