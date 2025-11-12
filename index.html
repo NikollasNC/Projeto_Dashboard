@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/mercado_acoes.css">
     <link rel="stylesheet" href="css/satisfacao_cliente.css">
     <link rel="stylesheet" href="css/performance_financeira.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
@@ -26,8 +27,9 @@
 
         <div id="div_buttons">
             <button id="button_mercado_acoes" class="button_header button_selected">Mercado de Ações</button>
-            <button id="button_satisfacao_cliente" class="button_header">Satisfação & Cliente</button>
-            <button id="button_performance_financeira" class="button_header">Performance Financeira</button>
+            <button id="button_satisfacao_cliente" class="button_header button_disable">Satisfação & Cliente</button>
+            <button id="button_performance_financeira" class="button_header button_disable">Performance
+                Financeira</button>
         </div>
     </header>
 
@@ -44,13 +46,14 @@
                         <h2 id="valor_baixa">Baixa: </h2>
                     </div>
                 </div>
-                <div id="curve_acoes" style="width: 300%; height: 100%"></div>
+
+                <div id="tabela_valorAcoes" style="width: 300%; height: 100%"></div>
             </div>
 
             <section class="secao2">
                 <div id="volume_negociacao">
                     <h1 id="quantidade_negociacao">Volume de Negociação: </h1>
-                    <div id="chart_div" style="width: 100%; height: 90%;"></div>
+                    <div id="tabela_volume" style="width: 100%; height: 90%;"></div>
                 </div>
 
                 <div id="variacao_diaria">
@@ -81,40 +84,55 @@
 
             <section class="taxa_clientes">
                 <h1>Taxa de Clientes Por País</h1>
-                <div id="regions_div" style="width: 100%; height: 50%;"></div>
+                <div id="regions_div" style="width: 100%; height: 90%;"></div>
             </section>
         </section>
 
         <section id="performance_financeira">
             <section class="receita secaoPerformance">
                 <h1>Receita Anual</h1>
-                <div id="grafico_receita" style="width: 100%; height: 100%"></div>
+                <div id="grafico_receita" style="width: 100%; height: 60%"></div>
             </section>
 
             <section class="lucroLiquido secaoPerformance">
                 <h1>Lucro Líquido Anual</h1>
-                <div id="grafico_lucroLiquido" style="width: 100%; height: 100%"></div>
+                <div id="grafico_lucroLiquido" style="width: 100%; height: 60%"></div>
             </section>
 
             <section class="despesasOperacionais secaoPerformance">
                 <h1>Despesas Operacionais Anual</h1>
-                <div id="grafico_despesasOperacionais" style="width: 100%; height: 100%"></div>
+                <div id="grafico_despesasOperacionais" style="width: 100%; height: 60%"></div>
             </section>
 
             <section class="investimento_ped secaoPerformance">
                 <h1>Investimento em P&D (%)</h1>
+                <div id="graficoPED" style="width: 100%; height: 100%;"></div>
             </section>
         </section>
     </main>
 
     <footer>
-        <h1>"oi"</h1>
+        <h1>Últimos clientes</h1>
+        <hr>
+
+        <div class="carousel">
+            <div class="card"><img id="img0" src="imgs/logo_amazonpng.png" alt="Imagem 1"></div>
+            <div class="card"><img id="img1" src="imgs/logo_apple.png" alt="Imagem 2"></div>
+            <div class="card"><img id="img2" src="imgs/logo_google.png" alt="Imagem 3"></div>
+            <div class="card"><img id="img3" src="imgs/logo_ibm.png" alt="Imagem 4" /></div>
+            <div class="card"><img id="img4" src="imgs/logo_intel.png" alt="Imagem 5" /></div>
+            <div class="card"><img id="img5" src="imgs/logo_meta.png" alt="Imagem 6" /></div>
+            <div class="card"><img id="img6" src="imgs/logo_microsoft.png" alt="Imagem 7" /></div>
+            <div class="card"><img id="img7" src="imgs/logo_nvidia.png" alt="Imagem 8" /></div>
+            <div class="card"><img id="img8" src="imgs/logo_spacex.png" alt="Imagem 9" /></div>
+            <div class="card"><img id="img9" src="imgs/netflix_logo.png" alt="Imagem 10" /></div>
+        </div>
     </footer>
 </body>
 
 <script src="js/index.js"></script>
 <script src="js/mercado_de_acoes.js"></script>
-<!-- <script src="js/satisfacao_cliente.js"></script> -->
-<!-- <script src="js/performance_financeira.js"></script> -->
+<script src="js/satisfacao_cliente.js"></script>
+<script src="js/performance_financeira.js"></script>
 
 </html>

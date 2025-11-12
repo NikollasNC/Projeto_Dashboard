@@ -1,10 +1,10 @@
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.load('current', { 'packages': ['bar'] });
 
-google.charts.setOnLoadCallback(test2());
-google.charts.setOnLoadCallback(test());
+google.charts.setOnLoadCallback(desenharGraficosAcoes);
+google.charts.setOnLoadCallback(getDadosEmpresa);
 
-async function test() {
+async function getDadosEmpresa() {
     try {
         const array = await getApi('https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo');
 
@@ -14,7 +14,6 @@ async function test() {
         document.getElementById("valor_alta").innerHTML += array["Global Quote"]["03. high"];
         document.getElementById("valor_baixa").innerHTML += array["Global Quote"]["04. low"];
         document.getElementById("valor_abertura").innerHTML += array["Global Quote"]["02. open"];
-
         document.getElementById("quantidade_negociacao").innerHTML += array["Global Quote"]["06. volume"];
         document.getElementById("variacao").innerHTML = array["Global Quote"]["10. change percent"];
     } catch (erro) {
@@ -22,7 +21,7 @@ async function test() {
     }
 }
 
-async function test2() {
+async function desenharGraficosAcoes() {
     try {
         const obj = await getApi('https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=IBM&apikey=demo');
         const array = Object.values(obj["Monthly Time Series"]);
@@ -48,8 +47,8 @@ async function test2() {
             hoje.setMonth(hoje.getMonth() - 1);
         }
 
-        graficoLinha(variacao.reverse());
-        graficoColuna(volume.reverse());
+        graficoLinha(variacao.reverse(), 'tabela_valorAcoes');
+        graficoColuna(volume.reverse(), 'tabela_volume');
     } catch (erro) {
         console.error("Erro:", erro);
     }
@@ -89,7 +88,7 @@ function drawChart(matriz) {
     chart.draw(data, options);
 }
 
-function graficoColuna(matriz) {
+function graficoColuna(matriz, id) {
     var data = new google.visualization.DataTable();
 
     data.addColumn('string', 'Topping');
@@ -101,11 +100,11 @@ function graficoColuna(matriz) {
         colors: ['#49a45a']
     }
 
-    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    var chart = new google.visualization.ColumnChart(document.getElementById(id));
     chart.draw(data, options);
 }
 
-function graficoLinha(matriz) {
+function graficoLinha(matriz, id) {
     var data = google.visualization.arrayToDataTable([
         ['Year', 'Preço']].concat(matriz));
 
@@ -114,7 +113,7 @@ function graficoLinha(matriz) {
         colors: ['#49a45a']
     };
 
-    var chart = new google.visualization.LineChart(document.getElementById('curve_acoes'));
+    var chart = new google.visualization.LineChart(document.getElementById(id));
 
     chart.draw(data, options);
 }

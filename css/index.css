@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 header {
@@ -61,17 +61,25 @@ header {
     border: 2px solid #49a45a;
     border-radius: 10cap;
 
-    background-color: rgb(38, 35, 35);
+    background-color: rgb(132, 166, 128);
     color: white;
     font-size: 1rem;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.597);
-
+    
     cursor: pointer;
 }
 
-.button_selected {
-    background-color: rgb(132, 166, 128);
-    color: rgb(255, 255, 255);
+.button_disable:hover {
+    background-color: rgba(132, 166, 128, 0.445);
+}
+
+.button_header:active {
+    transform: scale(0.98);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.597);
+}
+
+.button_disable {
+    background-color: rgb(38, 35, 35);
 }
 
 main {
@@ -79,10 +87,4 @@ main {
     height: 90dvh;
     flex-direction: column;
     background-color: rgb(50, 44, 44);
-}
-
-footer {
-    width: 100%;
-    height: 250px;
-    background-color: blue;
 }

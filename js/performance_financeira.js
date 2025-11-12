@@ -1,5 +1,7 @@
 google.charts.load("current", { packages: ['corechart'] });
+google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(desenharGraficos);
+google.charts.setOnLoadCallback(desenharGraficoPizza);
 
 async function desenharGraficos() {
     try {
@@ -41,6 +43,29 @@ function desenharGrafico() {
     graficoColuna("", "grafico_receita");
     graficoColuna("", "grafico_lucroLiquido");
     graficoColuna("", "grafico_despesasOperacionais");
+}
+
+function desenharGraficoPizza() {
+    graficoPizza("graficoPED");
+};
+
+function graficoPizza(id) {
+    var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['software', 11],
+        ['Manufatura Avançada', 2],
+        ['Realidade Virtual', 2],
+        ['serviços', 2],
+        ['IA', 7]
+    ]);
+
+    var options = {
+        backgroundColor: 'transparent',
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById(id));
+
+    chart.draw(data, options);
 }
 
 function graficoColuna(matriz, id) {

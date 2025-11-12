@@ -1,0 +1,115 @@
+footer {
+    background-color: rgb(44, 46, 46);
+    border-top: 1px solid rgba(162, 162, 162, 0.353);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.597);
+    height: 700px;
+    padding: 1em;
+}
+
+footer h1{
+    padding: 1em 1em 0em 1em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+}
+
+footer hr{
+    width: 30%;
+    margin: 1em;
+    height: 3px;
+
+    border: none;
+    background-color: #49a45a;
+}
+
+.carousel img {
+    width: 700px;
+    min-height: 300px;
+    max-height: 300px;
+    padding: 1em;
+    background-color: rgb(170, 170, 170);
+    border-radius: 5px;
+    border: 2px solid rgba(162, 162, 162, 0.353);
+}
+
+.carousel {
+    width: 90%;
+    border-radius: 10cap;
+    overflow-x: auto;
+    margin: 3em auto;
+    display: flex;
+    gap: 0em;
+    scroll-behavior: smooth;
+    anchor-name: --carousel;
+    scroll-snap-type: x mandatory;
+    scroll-marker-group: after;
+    
+    background-color:rgba(129, 118, 118, 0.544);
+    border: 2px solid rgba(162, 162, 162, 0.353);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.597);
+}
+
+.carousel::scroll-marker-group {
+    display: flex;
+    justify-content: center;
+    gap: .5em
+}
+
+.card::scroll-marker {
+    content: '';
+    height: 1em;
+    width: 1em;
+    background-color: #163b1d;
+    border-radius: 50%;
+}
+
+.card::scroll-marker:target-current {
+    background-color: #49a45a;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel::scroll-button(right),
+.carousel::scroll-button(left) {
+    content: '⮞';
+    border: none;
+    background-color: #49a45a;
+    font-family: Consolas;
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    padding-bottom: .1em;
+    cursor: pointer;
+    position-anchor: --carousel;
+    position: fixed;
+    position-area: center right;
+    translate: -50%;
+}
+
+.carousel::scroll-button(left) {
+    content: '⮜';
+    position-area: center left;
+    translate: 50%;
+}
+
+.carousel::scroll-button(right):disabled,
+.carousel::scroll-button(left):disabled {
+    opacity: 0.5;
+    cursor: auto;
+}
+
+.card {
+    scroll-snap-align: start;
+    flex: 0 0 20em;
+    aspect-ratio: 5 / 3;
+    padding: 1em;
+    border-radius: .5em;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
